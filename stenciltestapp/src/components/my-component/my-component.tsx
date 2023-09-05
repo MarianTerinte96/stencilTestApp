@@ -1,5 +1,7 @@
 import { Component, Prop, h } from '@stencil/core';
 import { format } from '../../utils/utils';
+// @ts-ignore
+import { LocalizeBehavior } from '../../../../../gdp-ui-commons';
 
 @Component({
   tag: 'my-component',
@@ -23,6 +25,8 @@ export class MyComponent {
   @Prop() last: string;
 
   private getText(): string {
+    // @ts-ignore
+    const testLocalize = new LocalizeBehavior();
     return format(this.first, this.middle, this.last);
   }
 
